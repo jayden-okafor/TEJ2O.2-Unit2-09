@@ -62,5 +62,4 @@ input.onButtonPressed(Button.B, function () {
 
     // show the score
     basic.showString(score.toString())
-
 })
