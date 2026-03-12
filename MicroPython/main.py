@@ -27,7 +27,7 @@ while True:
             display.show(Image.SQUARE)
 
         if random_number == 2:
-            display.show(Image.SCISSORS)
+            display.show(Image("99009:" "99090:" "00900:" "99090:" "99009"))
 
         sleep(1000)
         display.show(Image.HAPPY)
