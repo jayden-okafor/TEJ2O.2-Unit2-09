@@ -7,40 +7,49 @@ This program chooses between rock, paper or scissors and tracks score.
 from microbit import *
 import random
 
-# Variables (Starting at 0 so the math works)
+# variables
 random_number = 0
 score = 0
 
+# clear screen
+display.clear()
 display.show(Image.HAPPY)
 
 while True:
-
-    # 1. THE SHAKE
     if accelerometer.was_gesture("shake"):
+        # generate random number between 0 and 2
         random_number = random.randint(0, 2)
         display.clear()
 
+        # if the randomised number is 0 then show rock
         if random_number == 0:
             display.show(Image.SQUARE_SMALL)
 
+        # if the randomised number is 1 then show paper
         if random_number == 1:
             display.show(Image.SQUARE)
 
+        # if the randomised number is 2 then show scissors
         if random_number == 2:
             display.show(Image("99009:" "99090:" "00900:" "99090:" "99009"))
 
-        sleep(1000)
-        display.show(Image.HAPPY)
-
-    # 2. BUTTON A (Add to Score)
+    # when the "a" button is pressed
     if button_a.was_pressed():
-        score = score + 1
+
+        # add 1 to the current score value
+        score += 1
+
+        # show checkmark
         display.show(Image.YES)
+
+        # wait for 5 seconds
         sleep(500)
+
+        # show happy face
         display.show(Image.HAPPY)
 
-    # 3. BUTTON B (Check Score)
+    # when the "b" button is pressed
     if button_b.was_pressed():
-        # You have to use str() to show numbers in Python
+        # show the score
         display.scroll(str(score))
         display.show(Image.HAPPY)
