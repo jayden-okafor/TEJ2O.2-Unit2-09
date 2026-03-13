@@ -25,16 +25,19 @@ while True:
         if random_number == 0:
             display.show(Image.SQUARE_SMALL)
             sleep(3000)
+            display.show(Image.HAPPY)
 
         # if the randomised number is 1 then show paper
         if random_number == 1:
             display.show(Image.SQUARE)
             sleep(3000)
+            display.show(Image.HAPPY)
 
         # if the randomised number is 2 then show scissors
         if random_number == 2:
             display.show(Image("99009:" "99090:" "00900:" "99090:" "99009"))
             sleep(3000)
+            display.show(Image.HAPPY)
 
     # when the "a" button is pressed
     if button_a.was_pressed():
