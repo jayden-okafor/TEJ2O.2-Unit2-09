@@ -44,18 +44,14 @@ while True:
 
         # add 1 to the current score value
         score += 1
-
-        # show checkmark
         display.show(Image.YES)
 
         # wait for 5 seconds
         sleep(500)
-
-        # show happy face
         display.show(Image.HAPPY)
 
     # when the "b" button is pressed
     if button_b.was_pressed():
         # show the score
-        display.scroll(str(score))
+        display.scroll("score:" + str(score))
         display.show(Image.HAPPY)
