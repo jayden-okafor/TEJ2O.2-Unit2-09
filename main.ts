@@ -15,8 +15,6 @@ basic.showIcon(IconNames.Happy)
 input.onGesture(Gesture.Shake, function () {
     // generate random number between 0 and 2
     randomNumber = randint(0, 2)
-
-    // clear screen
     basic.clearScreen()
 
     // if the randomised number is 0 then show rock
@@ -44,21 +42,15 @@ input.onGesture(Gesture.Shake, function () {
 
 // when the "a" button is pressed
 input.onButtonPressed(Button.A, function () {
-    // clear screen
     basic.clearScreen()
 
     // add 1 to the current score value
     score += 1
-
-    // show checkmark
     basic.showIcon(IconNames.Yes)
 
     // wait for 1 second
     basic.pause(1000)
-
-    // show happy face
     basic.showIcon(IconNames.Happy)
-
 })
 
 // when the "b" button is pressed
@@ -67,5 +59,6 @@ input.onButtonPressed(Button.B, function () {
     basic.clearScreen()
 
     // show the score
-    basic.showString(score.toString())
+    basic.showString("score:" + score.toString())
+    basic.showIcon(IconNames.Happy)
 })
